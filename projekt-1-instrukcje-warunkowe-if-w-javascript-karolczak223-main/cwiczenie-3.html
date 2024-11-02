@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>3 - Instrukcja warunkowa w JavaScript</title>
+	<link href="arkusz-cwiczenia.css" rel="stylesheet">
+	
+</head>
+
+<body>
+
+	P = ( <input type="number" id="x"> , <input type="number" id="y"> )
+
+	<input type="submit" value="Sprawdź ćwiartkę" onclick="ktora_cwiartka()">
+
+	<div id="wynik"></div>
+	
+	<script>
+	
+		function ktora_cwiartka()
+		{
+			const wynik = document.getElementById("wynik");
+			var x = document.getElementById("x").value;
+			var y = document.getElementById("y").value;
+			if(x==15 && y==96){
+				wynik.innerHTML = "No Kartezjusz miał tam kilka dużych profesji. Był francuskim filozofem, matematykiem i fizykiem. Ogólnie to dobrze się uczył, dobrze dla niego. Przydałoby się jednak gdyby tyle pracy wkładał w swój wygląd, no ale jeśli tak zrewolucjonizował filozofię, to chyba się opłacało. Jak kto woli.";
+			}
+			else if(x> 0 && y>0){
+				wynik.innerHTML = "ćwiartka I";
+			}
+			else if(x<0 && y>0){
+				wynik.innerHTML = "ćwiartka II";
+			}
+			else if(x<0 && y<0){
+				wynik.innerHTML = "ćwiartka III";
+			}
+			else if(x>0 && y<0){
+				wynik.innerHTML = "ćwiartka IV";
+			}
+			else if(x==0 && y==0){
+				wynik.innerHTML = "Punkt P=(0,0) jest początkiem układu współrzędnych";
+			}
+			else if(x==0 || y==0){
+				wynik.innerHTML = "Punkt leży na jednej z osi układu";
+			}
+			else{
+				wynik.innerHTML = "Współrzędne mogą być tylko liczbami!"
+			}
+		}
+	</script>
+
+</body>
+</html>

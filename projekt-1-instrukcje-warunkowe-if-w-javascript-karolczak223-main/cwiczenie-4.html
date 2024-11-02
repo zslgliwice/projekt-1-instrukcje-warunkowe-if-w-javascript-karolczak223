@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>4 - Instrukcja warunkowa w JavaScript</title>
+	<link href="arkusz-cwiczenia.css" rel="stylesheet">
+	
+</head>
+
+<body>
+
+	<label> a = <input type="number" id="a"> </label>
+	<label> b = <input type="number" id="b"> </label>
+	<label> c = <input type="number" id="c"> </label>
+
+	<input type="submit" value="Informacje o liczbach" onclick="matematyka()">
+
+	<div id="wynik"></div>
+	
+	<script>
+	
+		function matematyka()
+		{
+			var a = document.getElementById('a').value;
+			var b = document.getElementById('b').value;
+			var c = document.getElementById('c').value;
+			const wynik = document.getElementById("wynik");
+
+				var min = Math.min(a,b,c);
+				var max = Math.max(a,b,c);
+				var abs_a = Math.abs(a); var abs_b = Math.abs(b); var abs_c = Math.abs(c);
+				if(a % 2 === 0){
+					 var a_parzystość = "parzysta";
+				}else{
+					var a_parzystość = "nieparzysta";
+				}
+
+				if(b % 2 === 0){
+					var b_parzystość = "parzysta";
+				}else{
+					var b_parzystość = "nieparzysta";
+				}
+
+				if(c % 2 === 0){
+					var c_parzystość = "parzysta";
+				}else{
+					var c_parzystość = "nieparzysta";
+				}
+
+				wynik.innerHTML = "<p>Najmniejszą z wprowadzonych liczb to " + min + "</p><p>Największą z wprowadzonych liczb to " + max + "</p><p>Wartość bezwzględna z podanych liczb to kolejno: " + abs_a + ", " + abs_b + ", " + abs_c + 
+				"</p><p>Parzystość podanych liczb to: a jest " + a_parzystość + ", b jest " + b_parzystość + ", c jest " + c_parzystość  + "</p>";
+
+
+			}					
+
+	</script>
+
+</body>
+</html>
